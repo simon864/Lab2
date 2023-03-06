@@ -181,8 +181,8 @@ namespace lab2
        
         public void Menu()
         {
-            bool Exit = true;
-            while (Exit)
+            bool IsExit = true;
+            while (IsExit)
             {
 
             Console.WriteLine("Что бы посмотреть информацию о документа HTML, нажмите 1, MSExcel нажмите 2," +
@@ -193,28 +193,34 @@ namespace lab2
                     case "1":
                         HTML HTMLDoc = new HTML("Первый Документ", "Стасян", "Он, Она", "sfhd235dfhgj", "Какая-то тема");
                         HTMLDoc.DocumentInfo();
+                        Singletone.Instance.Menu();
                         break;
                     case "2":
                         MSExcel MSExcelDoc = new MSExcel("Первый Документ", "Стасян", "Он, Она", "sfhd235dfhgj", "Какая-то тема");
                         MSExcelDoc.DocumentInfo();
+                        Singletone.Instance.Menu();
                         break;
                     case "3":
                         MSWord MSWordDoc = new MSWord("Первый Документ", "Стасян", "Он, Она", "sfhd235dfhgj", "Какая-то тема");
                         MSWordDoc.DocumentInfo();
+                        Singletone.Instance.Menu();
                         break;
                     case "4":
                         PDF PDFDoc = new PDF("Первый Документ", "Стасян", "Он, Она", "sfhd235dfhgj", "Какая-то тема");
                         PDFDoc.DocumentInfo();
+                        Singletone.Instance.Menu();
                         break;
                     case "5":
                         TXT TXTDoc = new TXT("Первый Документ", "Стасян", "Он, Она", "sfhd235dfhgj", "Какая-то тема");
                         TXTDoc.DocumentInfo();
+                        Singletone.Instance.Menu();
                         break;
                     case "6":
-                        Exit = false;
+                        IsExit = false;
                         break;
                     default: 
                         Console.WriteLine("Такого варианта ответа нет, нажмите на 1-5");
+                        Singletone.Instance.Menu();
                         break;
                 }
 
