@@ -170,8 +170,12 @@ namespace lab2
         public static Singletone Instance
         {
             get {
-                instance = new Singletone();
+                if (instance == null)
+                {
+                    instance = new Singletone(); 
+                }
                 return instance;
+
             }
         }
        
